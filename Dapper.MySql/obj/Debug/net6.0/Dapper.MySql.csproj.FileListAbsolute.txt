@@ -1,0 +1,5 @@
+D:\ShenWan\DaoChu\Dapper.MySql\obj\Debug\net6.0\Dapper.MySql.csproj.AssemblyReference.cache
+D:\ShenWan\DaoChu\Dapper.MySql\obj\Debug\net6.0\Dapper.MySql.GeneratedMSBuildEditorConfig.editorconfig
+D:\ShenWan\DaoChu\Dapper.MySql\obj\Debug\net6.0\Dapper.MySql.AssemblyInfoInputs.cache
+D:\ShenWan\DaoChu\Dapper.MySql\obj\Debug\net6.0\Dapper.MySql.AssemblyInfo.cs
+D:\ShenWan\DaoChu\Dapper.MySql\obj\Debug\net6.0\Dapper.MySql.csproj.CoreCompileInputs.cache

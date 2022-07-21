@@ -1,0 +1,15 @@
+D:\ShenWan\DaoChu\Dapper.Oracle\obj\Debug\net6.0\Dapper.Oracle.csproj.AssemblyReference.cache
+D:\ShenWan\DaoChu\Dapper.Oracle\obj\Debug\net6.0\Dapper.Oracle.GeneratedMSBuildEditorConfig.editorconfig
+D:\ShenWan\DaoChu\Dapper.Oracle\obj\Debug\net6.0\Dapper.Oracle.AssemblyInfoInputs.cache
+D:\ShenWan\DaoChu\Dapper.Oracle\obj\Debug\net6.0\Dapper.Oracle.AssemblyInfo.cs
+D:\ShenWan\DaoChu\Dapper.Oracle\obj\Debug\net6.0\Dapper.Oracle.csproj.CoreCompileInputs.cache
+D:\ShenWan\DaoChu\Dapper.Oracle\bin\Debug\net6.0\Dapper.Oracle.deps.json
+D:\ShenWan\DaoChu\Dapper.Oracle\bin\Debug\net6.0\Dapper.Oracle.dll
+D:\ShenWan\DaoChu\Dapper.Oracle\bin\Debug\net6.0\Dapper.Oracle.pdb
+D:\ShenWan\DaoChu\Dapper.Oracle\bin\Debug\net6.0\Dapper.Base.dll
+D:\ShenWan\DaoChu\Dapper.Oracle\bin\Debug\net6.0\Dapper.Base.pdb
+D:\ShenWan\DaoChu\Dapper.Oracle\obj\Debug\net6.0\Dapper.Oracle.csproj.CopyComplete
+D:\ShenWan\DaoChu\Dapper.Oracle\obj\Debug\net6.0\Dapper.Oracle.dll
+D:\ShenWan\DaoChu\Dapper.Oracle\obj\Debug\net6.0\refint\Dapper.Oracle.dll
+D:\ShenWan\DaoChu\Dapper.Oracle\obj\Debug\net6.0\Dapper.Oracle.pdb
+D:\ShenWan\DaoChu\Dapper.Oracle\obj\Debug\net6.0\ref\Dapper.Oracle.dll
