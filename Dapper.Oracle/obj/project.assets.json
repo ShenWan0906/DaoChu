@@ -1380,19 +1380,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\11277\\.nuget\\packages\\": {}
+    "C:\\Users\\ShenWan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ShenWan\\DaoChu\\Dapper.Oracle\\Dapper.Oracle.csproj",
+      "projectUniqueName": "D:\\MyProject\\DaoChu\\Dapper.Oracle\\Dapper.Oracle.csproj",
       "projectName": "Dapper.Oracle",
-      "projectPath": "D:\\ShenWan\\DaoChu\\Dapper.Oracle\\Dapper.Oracle.csproj",
-      "packagesPath": "C:\\Users\\11277\\.nuget\\packages\\",
-      "outputPath": "D:\\ShenWan\\DaoChu\\Dapper.Oracle\\obj\\",
+      "projectPath": "D:\\MyProject\\DaoChu\\Dapper.Oracle\\Dapper.Oracle.csproj",
+      "packagesPath": "C:\\Users\\ShenWan\\.nuget\\packages\\",
+      "outputPath": "D:\\MyProject\\DaoChu\\Dapper.Oracle\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\11277\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ShenWan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1400,15 +1400,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://172.19.30.181:8081/repository/nuget-main/": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\ShenWan\\DaoChu\\Dapper.Base\\Dapper.Base.csproj": {
-              "projectPath": "D:\\ShenWan\\DaoChu\\Dapper.Base\\Dapper.Base.csproj"
+            "D:\\MyProject\\DaoChu\\Dapper.Base\\Dapper.Base.csproj": {
+              "projectPath": "D:\\MyProject\\DaoChu\\Dapper.Base\\Dapper.Base.csproj"
             }
           }
         }
@@ -1451,7 +1450,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

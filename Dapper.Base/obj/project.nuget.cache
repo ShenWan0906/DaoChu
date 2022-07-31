@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "1MljVR3CTjjjgyf6EHLYUGn66vZ8cbZieEWz7kKczb181AKUv1dUAxSByI7MA+kdbmgf5IE+CyEIi/ZXQNXv5w==",
+  "dgSpecHash": "XpVlWS3nCwUV7ORH512vxIn8dB8ks45WSeFsMbNEayyBUd74pdPCtlpECkmFsw7d90X9CwSuSSn6uIcblaSV8Q==",
   "success": true,
-  "projectFilePath": "D:\\ShenWan\\DaoChu\\Dapper.Base\\Dapper.Base.csproj",
+  "projectFilePath": "D:\\MyProject\\DaoChu\\Dapper.Base\\Dapper.Base.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\11277\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
-    "C:\\Users\\11277\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\ShenWan\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
+    "C:\\Users\\ShenWan\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": []
 }

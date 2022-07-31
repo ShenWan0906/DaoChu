@@ -202,5 +202,15 @@ namespace DaoChu
                 LogTiShi("数据库连接失败：" + ex);
             }
         }
+
+        /// <summary>
+        /// 导出Repositories
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DaoChuRepositories_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -41,7 +41,6 @@
             this.DaoChuDto = new System.Windows.Forms.Button();
             this.DaoChuModel = new System.Windows.Forms.Button();
             this.DaoChuServices = new System.Windows.Forms.Button();
-            this.DaoChuRepositories = new System.Windows.Forms.Button();
             this.GetAllTable = new System.Windows.Forms.Button();
             this.DaoControllers = new System.Windows.Forms.Button();
             this.DaoChuAll = new System.Windows.Forms.Button();
@@ -49,7 +48,7 @@
             this.ViewName = new System.Windows.Forms.TextBox();
             this.GetTable = new System.Windows.Forms.Button();
             this.GetView = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.DaoChuRepositories = new System.Windows.Forms.Button();
             this.DBLeiXing = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.ServiceName = new System.Windows.Forms.TextBox();
@@ -181,15 +180,6 @@
             this.DaoChuServices.Text = "导出Services";
             this.DaoChuServices.UseVisualStyleBackColor = true;
             // 
-            // DaoChuRepositories
-            // 
-            this.DaoChuRepositories.Location = new System.Drawing.Point(467, 606);
-            this.DaoChuRepositories.Name = "DaoChuRepositories";
-            this.DaoChuRepositories.Size = new System.Drawing.Size(116, 34);
-            this.DaoChuRepositories.TabIndex = 29;
-            this.DaoChuRepositories.Text = "导出Repositories";
-            this.DaoChuRepositories.UseVisualStyleBackColor = true;
-            // 
             // GetAllTable
             // 
             this.GetAllTable.Location = new System.Drawing.Point(467, 272);
@@ -252,14 +242,15 @@
             this.GetView.Text = "查询指定视图";
             this.GetView.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // DaoChuRepositories
             // 
-            this.button1.Location = new System.Drawing.Point(467, 606);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 34);
-            this.button1.TabIndex = 29;
-            this.button1.Text = "导出Repositories";
-            this.button1.UseVisualStyleBackColor = true;
+            this.DaoChuRepositories.Location = new System.Drawing.Point(467, 606);
+            this.DaoChuRepositories.Name = "DaoChuRepositories";
+            this.DaoChuRepositories.Size = new System.Drawing.Size(116, 34);
+            this.DaoChuRepositories.TabIndex = 29;
+            this.DaoChuRepositories.Text = "导出Repositories";
+            this.DaoChuRepositories.UseVisualStyleBackColor = true;
+            this.DaoChuRepositories.Click += new System.EventHandler(this.DaoChuRepositories_Click);
             // 
             // DBLeiXing
             // 
@@ -343,7 +334,6 @@
             this.Controls.Add(this.TableName);
             this.Controls.Add(this.DaoChuAll);
             this.Controls.Add(this.DaoControllers);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.DaoChuRepositories);
             this.Controls.Add(this.DaoChuServices);
             this.Controls.Add(this.DaoChuModel);
@@ -384,7 +374,6 @@
         private Button DaoChuDto;
         private Button DaoChuModel;
         private Button DaoChuServices;
-        private Button DaoChuRepositories;
         private Button GetAllTable;
         private Button DaoControllers;
         private Button DaoChuAll;
@@ -392,7 +381,7 @@
         private TextBox ViewName;
         private Button GetTable;
         private Button GetView;
-        private Button button1;
+        private Button DaoChuRepositories;
         private ComboBox DBLeiXing;
         private Label label2;
         private TextBox ServiceName;
