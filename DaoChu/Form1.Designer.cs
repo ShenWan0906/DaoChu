@@ -43,7 +43,7 @@
             this.DaoChuServices = new System.Windows.Forms.Button();
             this.GetAllTable = new System.Windows.Forms.Button();
             this.DaoControllers = new System.Windows.Forms.Button();
-            this.DaoChuAll = new System.Windows.Forms.Button();
+            this.DaoContext = new System.Windows.Forms.Button();
             this.TableName = new System.Windows.Forms.TextBox();
             this.ViewName = new System.Windows.Forms.TextBox();
             this.GetTable = new System.Windows.Forms.Button();
@@ -92,6 +92,7 @@
             this.LogText.Multiline = true;
             this.LogText.Name = "LogText";
             this.LogText.ReadOnly = true;
+            this.LogText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.LogText.Size = new System.Drawing.Size(733, 110);
             this.LogText.TabIndex = 6;
             // 
@@ -160,10 +161,11 @@
             this.DaoChuDto.TabIndex = 26;
             this.DaoChuDto.Text = "导出Dto";
             this.DaoChuDto.UseVisualStyleBackColor = true;
+            this.DaoChuDto.Click += new System.EventHandler(this.DaoChuDto_Click);
             // 
             // DaoChuModel
             // 
-            this.DaoChuModel.Location = new System.Drawing.Point(637, 457);
+            this.DaoChuModel.Location = new System.Drawing.Point(467, 532);
             this.DaoChuModel.Name = "DaoChuModel";
             this.DaoChuModel.Size = new System.Drawing.Size(116, 34);
             this.DaoChuModel.TabIndex = 27;
@@ -173,12 +175,13 @@
             // 
             // DaoChuServices
             // 
-            this.DaoChuServices.Location = new System.Drawing.Point(467, 532);
+            this.DaoChuServices.Location = new System.Drawing.Point(637, 457);
             this.DaoChuServices.Name = "DaoChuServices";
             this.DaoChuServices.Size = new System.Drawing.Size(116, 34);
             this.DaoChuServices.TabIndex = 28;
             this.DaoChuServices.Text = "导出Services";
             this.DaoChuServices.UseVisualStyleBackColor = true;
+            this.DaoChuServices.Click += new System.EventHandler(this.DaoChuServices_Click);
             // 
             // GetAllTable
             // 
@@ -198,15 +201,17 @@
             this.DaoControllers.TabIndex = 30;
             this.DaoControllers.Text = "导出Controllers";
             this.DaoControllers.UseVisualStyleBackColor = true;
+            this.DaoControllers.Click += new System.EventHandler(this.DaoControllers_Click);
             // 
-            // DaoChuAll
+            // DaoContext
             // 
-            this.DaoChuAll.Location = new System.Drawing.Point(637, 606);
-            this.DaoChuAll.Name = "DaoChuAll";
-            this.DaoChuAll.Size = new System.Drawing.Size(116, 34);
-            this.DaoChuAll.TabIndex = 31;
-            this.DaoChuAll.Text = "一键导出全部";
-            this.DaoChuAll.UseVisualStyleBackColor = true;
+            this.DaoContext.Location = new System.Drawing.Point(637, 606);
+            this.DaoContext.Name = "DaoContext";
+            this.DaoContext.Size = new System.Drawing.Size(116, 34);
+            this.DaoContext.TabIndex = 31;
+            this.DaoContext.Text = "导出Context";
+            this.DaoContext.UseVisualStyleBackColor = true;
+            this.DaoContext.Click += new System.EventHandler(this.DaoContext_Click);
             // 
             // TableName
             // 
@@ -312,9 +317,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(637, 45);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(85, 17);
+            this.label6.Size = new System.Drawing.Size(95, 17);
             this.label6.TabIndex = 44;
-            this.label6.Text = "当前版本 V1.0";
+            this.label6.Text = "当前版本 V1.0.0";
             // 
             // DaoChuTool
             // 
@@ -332,7 +337,7 @@
             this.Controls.Add(this.GetTable);
             this.Controls.Add(this.ViewName);
             this.Controls.Add(this.TableName);
-            this.Controls.Add(this.DaoChuAll);
+            this.Controls.Add(this.DaoContext);
             this.Controls.Add(this.DaoControllers);
             this.Controls.Add(this.DaoChuRepositories);
             this.Controls.Add(this.DaoChuServices);
@@ -376,7 +381,7 @@
         private Button DaoChuServices;
         private Button GetAllTable;
         private Button DaoControllers;
-        private Button DaoChuAll;
+        private Button DaoContext;
         private TextBox TableName;
         private TextBox ViewName;
         private Button GetTable;

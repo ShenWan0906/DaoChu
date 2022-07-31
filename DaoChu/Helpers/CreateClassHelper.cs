@@ -86,7 +86,7 @@ namespace ModelConvertToDto.Helpers
         public static void SaveTableListRepositories(string nameSpace, string like, string path = "")
         {
             var tableList = dapperHelper.GetQueryTableName(like);
-            path = Directory.GetCurrentDirectory() + path;
+            //path = Directory.GetCurrentDirectory() + path;
             tableList.ForEach(x =>
             {
                 SaveRepositoriesFile(nameSpace, x, path);
@@ -101,7 +101,7 @@ namespace ModelConvertToDto.Helpers
             {
                 path = System.IO.Directory.GetCurrentDirectory() + "\\DownFile\\";
             }
-            path += "\\Service\\";
+            path += "\\Repositories\\";
             //判断该路径下文件夹是否存在，不存在的情况下新建文件夹
             if (!Directory.Exists(path))
             {
@@ -111,7 +111,7 @@ namespace ModelConvertToDto.Helpers
             var fileContent = GetRepositoriesFileContent(nameSpace, table, colList, path);
 
             //生成txt文件，将json字符串数据保存到txt文件
-            string postPath = $"{path}{table.ModelName}Service.cs";//路径+文件名
+            string postPath = $"{path}{table.ModelName}Repositories.cs";//路径+文件名
             byte[] bytes = null;
             bytes = Encoding.UTF8.GetBytes(fileContent);//Obj为json数据
             FileStream fs = new FileStream(postPath, FileMode.Create);
@@ -131,24 +131,140 @@ namespace ModelConvertToDto.Helpers
         /// <param name="fileUrl"></param>
         /// <returns></returns>
         public static string GetRepositoriesFileContent(string nameSpace, TableDto table, List<ColDto> colList, string path = "", bool isDto = true)
+        {
+            var item = table.FileName.Substring(0, 1).ToLower() + table.FileName.Substring(1);
+
+            var dtoStr = "";
+            dtoStr += $@"using Mediinfo.Business.SaaS.ORM.Repositories;
+using {nameSpace}.ORM.IRepositories;
+using {nameSpace}.ORM.Models;
+using Mediinfo.Starter.AutoDI.Attributes;
+using System;
+"; dtoStr += $@"
+namespace {nameSpace}.ORM.Repositories
+{{
+    /// <summary>
+    /// {table.Comments}
+    /// </summary>
+    [Repository]
+    public class {table.ModelName}Repository : SaaSRepository<{nameSpace.Split('.')[nameSpace.Split('.').Length - 1]}DbContext, {table.ModelName}Model, string>, I{table.ModelName}Repository
+    {{"; dtoStr += $@"   
+        public {table.ModelName}Repository(IServiceProvider serviceProvider) : base(serviceProvider)
+        {{
+        }}
+    }}"; dtoStr += $@"
+}}";
+            return dtoStr;
+        }
+
+        #endregion
+
+        #region 生成DbContext
+        public static void SaveTableListDbContext(string nameSpace, string like, string path = "")
+        {
+            var tableList = dapperHelper.GetQueryTableName(like);
+            //path = Directory.GetCurrentDirectory() + path;
+            tableList.ForEach(x =>
+            {
+                SaveDbContextFile(nameSpace, x, path);
+            });
+        }
+
+        private static void SaveDbContextFile(string nameSpace, TableDto table, string path = "")
+        {
+            SetTableName(table);
+            var colList = dapperHelper.GetColList(table.TableName).Where(x => !excludes.Contains(x.ColumnName.ToUpper())).ToList();
+            if (string.IsNullOrWhiteSpace(path))
+            {
+                path = System.IO.Directory.GetCurrentDirectory() + "\\DownFile\\";
+            }
+            path += "\\DbContext\\";
+            //判断该路径下文件夹是否存在，不存在的情况下新建文件夹
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+
+            var fileContent = GetDbContextFileContent(nameSpace, table, colList, path);
+
+            //生成txt文件，将json字符串数据保存到txt文件
+            string postPath = $"{path}{table.ModelName}DbContext.cs";//路径+文件名
+            byte[] bytes = null;
+            bytes = Encoding.UTF8.GetBytes(fileContent);//Obj为json数据
+            FileStream fs = new FileStream(postPath, FileMode.Create);
+            fs.Write(bytes, 0, bytes.Length);
+            fs.Close();
+
+            Console.WriteLine($"保存文件成功{path}：{table.ModelName}");
+        }
+
+        /// <summary>
+        /// 获取生成后的内容
+        /// </summary>
+        /// <param name="nameSpace"></param>
+        /// <param name="table"></param>
+        /// <param name="colList"></param>
+        /// <param name="isDto">是否是Dto实体</param>
+        /// <param name="fileUrl"></param>
+        /// <returns></returns>
+        public static string GetDbContextFileContent(string nameSpace, TableDto table, List<ColDto> colList, string path = "", bool isDto = true)
+        {
+            var item = table.FileName.Substring(0, 1).ToLower() + table.FileName.Substring(1);
+
+            var dtoStr = "";
+            dtoStr += $@"using JetBrains.Annotations;
+using MCRP.MSF.Core.UnitOfWork.Abstraction;
+using {nameSpace}.ORM.Models;
+using Mediinfo.SPH.Core.EntityFramework.Dynamic.Extensions;
+using Mediinfo.SPH.FormLog.ORM;
+using Microsoft.EntityFrameworkCore;
+using System;
+"; dtoStr += $@"
+namespace {nameSpace}.ORM.ORM
+{{
+    public class {nameSpace.Split('.')[nameSpace.Split('.').Length - 1]}DbContext : FormLogDbContext<{nameSpace.Split('.')[nameSpace.Split('.').Length - 1]}DbContext>, IUnitOfWork<{nameSpace.Split('.')[nameSpace.Split('.').Length - 1]}DbContext>, IUnitOfWork
+    {{"; dtoStr += $@"  
+        /// <summary>
+        /// {table.Comments}
+        /// </summary>
+        public DbSet<{table.ModelName}Model> {table.ModelName}Models {{get; set; }}
+
+        public {nameSpace.Split('.')[nameSpace.Split('.').Length - 1]}DbContext([NotNull] DbContextOptions<{nameSpace.Split('.')[nameSpace.Split('.').Length - 1]}DbContext> options, IServiceProvider serviceProvider) : base(options, serviceProvider)
+        {{
+        }}
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {{
+            modelBuilder.InitDynamicEntity(this);
+            base.OnModelCreating(modelBuilder);
+        }}
+    }}"; dtoStr += $@"
+}}";
+            return dtoStr;
+        }
+        #endregion
+
+        /// <summary>
+        /// 获取生成后的内容
+        /// </summary>
+        /// <param name="nameSpace"></param>
+        /// <param name="table"></param>
+        /// <param name="colList"></param>
+        /// <param name="isDto">是否是Dto实体</param>
+        /// <param name="fileUrl"></param>
+        /// <returns></returns>
+        public static string GetServiceFileContent(string nameSpace, TableDto table, List<ColDto> colList, string path = "", bool isDto = true)
          {
             var item = table.FileName.Substring(0, 1).ToLower() + table.FileName.Substring(1);
 
             var dtoStr = "";
-            dtoStr += $@"using MCRP.MSF.Core.UnitOfWork.Abstraction;
-using Mediinfo.Business.SaaS.API.IServices;
-using {nameSpace}.API.Dtos;
-using {nameSpace}.API.IServices;
+            dtoStr += $@"using Mediinfo.Business.SaaS.ORM.Repositories;;
 using {nameSpace}.ORM.IRepositories;
 using {nameSpace}.ORM.Models;
-using Mediinfo.SPH.Core.SaaS.Helpers;
-using Microsoft.EntityFrameworkCore;
+using Mediinfo.Starter.AutoDI.Attributes;
 using System;
-using System.Linq;
-using System.Threading.Tasks;
 "; dtoStr += $@"
 
-namespace {nameSpace}.API.Services
+namespace {nameSpace}.ORM.Repositories
 {{
     /// <summary>
     /// {table.Comments}
@@ -257,7 +373,6 @@ namespace {nameSpace}.API.Services
 }}";
             return dtoStr;
         }
-        #endregion
 
         public static void SaveTableListModel(string nameSpace, string like, string path = "")
         {
