@@ -40,9 +40,14 @@ namespace DaoChu
             ServiceName.Text = "Mediinfo.MCIS.ErTongBJ"; // 默认服务名称
         }
 
+        /// <summary>
+        /// 查询全部表
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-
+            LogTiShi("下个版本更新，敬请期待");
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -403,6 +408,36 @@ namespace DaoChu
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
             return path;
+        }
+
+        /// <summary>
+        /// 查询全部视图
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void GetAllView_Click(object sender, EventArgs e)
+        {
+            LogTiShi("下个版本更新，敬请期待");
+        }
+
+        /// <summary>
+        /// 查询指定表
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void GetTable_Click(object sender, EventArgs e)
+        {
+            LogTiShi("下个版本更新，敬请期待");
+        }
+
+        /// <summary>
+        /// 查询指定视图
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void GetView_Click(object sender, EventArgs e)
+        {
+            LogTiShi("下个版本更新，敬请期待");
         }
     }
 }

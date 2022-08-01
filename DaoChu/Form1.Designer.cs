@@ -104,6 +104,7 @@
             this.GetAllView.TabIndex = 7;
             this.GetAllView.Text = "查询全部视图";
             this.GetAllView.UseVisualStyleBackColor = true;
+            this.GetAllView.Click += new System.EventHandler(this.GetAllView_Click);
             // 
             // label8
             // 
@@ -237,6 +238,7 @@
             this.GetTable.TabIndex = 34;
             this.GetTable.Text = "查询指定表";
             this.GetTable.UseVisualStyleBackColor = true;
+            this.GetTable.Click += new System.EventHandler(this.GetTable_Click);
             // 
             // GetView
             // 
@@ -246,6 +248,7 @@
             this.GetView.TabIndex = 35;
             this.GetView.Text = "查询指定视图";
             this.GetView.UseVisualStyleBackColor = true;
+            this.GetView.Click += new System.EventHandler(this.GetView_Click);
             // 
             // DaoChuRepositories
             // 

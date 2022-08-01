@@ -76,19 +76,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ShenWan\\.nuget\\packages\\": {}
+    "C:\\Users\\11277\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MyProject\\DaoChu\\Dapper.Base\\Dapper.Base.csproj",
+      "projectUniqueName": "D:\\ShenWan\\DaoChu\\Dapper.Base\\Dapper.Base.csproj",
       "projectName": "Dapper.Base",
-      "projectPath": "D:\\MyProject\\DaoChu\\Dapper.Base\\Dapper.Base.csproj",
-      "packagesPath": "C:\\Users\\ShenWan\\.nuget\\packages\\",
-      "outputPath": "D:\\MyProject\\DaoChu\\Dapper.Base\\obj\\",
+      "projectPath": "D:\\ShenWan\\DaoChu\\Dapper.Base\\Dapper.Base.csproj",
+      "packagesPath": "C:\\Users\\11277\\.nuget\\packages\\",
+      "outputPath": "D:\\ShenWan\\DaoChu\\Dapper.Base\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ShenWan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\11277\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -96,6 +96,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "http://172.19.30.181:8081/repository/nuget-main/": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -138,7 +139,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }
