@@ -159,6 +159,76 @@ namespace {nameSpace}.ORM.Repositories
 
         #endregion
 
+        #region 生成IRepositories
+        public static void SaveTableListIRepositories(string nameSpace, string like, string path = "")
+        {
+            var tableList = dapperHelper.GetQueryTableName(like);
+            //path = Directory.GetCurrentDirectory() + path;
+            tableList.ForEach(x =>
+            {
+                SaveIRepositoriesFile(nameSpace, x, path);
+            });
+        }
+
+        private static void SaveIRepositoriesFile(string nameSpace, TableDto table, string path = "")
+        {
+            SetTableName(table);
+            var colList = dapperHelper.GetColList(table.TableName).Where(x => !excludes.Contains(x.ColumnName.ToUpper())).ToList();
+            if (string.IsNullOrWhiteSpace(path))
+            {
+                path = System.IO.Directory.GetCurrentDirectory() + "\\DownFile\\";
+            }
+            path += "\\IRepositories\\";
+            //判断该路径下文件夹是否存在，不存在的情况下新建文件夹
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+
+            var fileContent = GetIRepositoriesFileContent(nameSpace, table, colList, path);
+
+            //生成txt文件，将json字符串数据保存到txt文件
+            string postPath = $"{path}I{table.ModelName}Repository.cs";//路径+文件名
+            byte[] bytes = null;
+            bytes = Encoding.UTF8.GetBytes(fileContent);//Obj为json数据
+            FileStream fs = new FileStream(postPath, FileMode.Create);
+            fs.Write(bytes, 0, bytes.Length);
+            fs.Close();
+
+            Console.WriteLine($"保存文件成功{path}：{table.ModelName}");
+        }
+
+        /// <summary>
+        /// 获取生成后的内容
+        /// </summary>
+        /// <param name="nameSpace"></param>
+        /// <param name="table"></param>
+        /// <param name="colList"></param>
+        /// <param name="isDto">是否是Dto实体</param>
+        /// <param name="fileUrl"></param>
+        /// <returns></returns>
+        public static string GetIRepositoriesFileContent(string nameSpace, TableDto table, List<ColDto> colList, string path = "", bool isDto = true)
+        {
+            var item = table.FileName.Substring(0, 1).ToLower() + table.FileName.Substring(1);
+
+            var dtoStr = "";
+            dtoStr += $@"using Mediinfo.Business.SaaS.ORM.IRepositories;
+using {nameSpace}.ORM.Models;
+"; dtoStr += $@"
+namespace {nameSpace}.ORM.IRepositories
+{{
+    /// <summary>
+    /// {table.Comments}
+    /// </summary>
+    public interface I{table.ModelName}Repository : ISaaSRepository<{table.ModelName}Model, string>
+    {{"; dtoStr += $@"   
+    }}"; dtoStr += $@"
+}}";
+            return dtoStr;
+        }
+
+        #endregion
+
         #region 生成DbContext
         public static void SaveTableListDbContext(string nameSpace, string like, string path = "")
         {

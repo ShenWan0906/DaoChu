@@ -56,6 +56,8 @@
             this.CheckNone = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.DaoChuIRepositories = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -168,7 +170,7 @@
             // 
             this.DaoChuModel.Location = new System.Drawing.Point(467, 532);
             this.DaoChuModel.Name = "DaoChuModel";
-            this.DaoChuModel.Size = new System.Drawing.Size(116, 34);
+            this.DaoChuModel.Size = new System.Drawing.Size(126, 34);
             this.DaoChuModel.TabIndex = 27;
             this.DaoChuModel.Text = "导出Model";
             this.DaoChuModel.UseVisualStyleBackColor = true;
@@ -198,7 +200,7 @@
             // 
             this.DaoControllers.Location = new System.Drawing.Point(467, 457);
             this.DaoControllers.Name = "DaoControllers";
-            this.DaoControllers.Size = new System.Drawing.Size(116, 34);
+            this.DaoControllers.Size = new System.Drawing.Size(126, 34);
             this.DaoControllers.TabIndex = 30;
             this.DaoControllers.Text = "导出Controllers";
             this.DaoControllers.UseVisualStyleBackColor = true;
@@ -206,7 +208,7 @@
             // 
             // DaoContext
             // 
-            this.DaoContext.Location = new System.Drawing.Point(637, 606);
+            this.DaoContext.Location = new System.Drawing.Point(808, 457);
             this.DaoContext.Name = "DaoContext";
             this.DaoContext.Size = new System.Drawing.Size(116, 34);
             this.DaoContext.TabIndex = 31;
@@ -252,7 +254,7 @@
             // 
             // DaoChuRepositories
             // 
-            this.DaoChuRepositories.Location = new System.Drawing.Point(467, 606);
+            this.DaoChuRepositories.Location = new System.Drawing.Point(637, 606);
             this.DaoChuRepositories.Name = "DaoChuRepositories";
             this.DaoChuRepositories.Size = new System.Drawing.Size(116, 34);
             this.DaoChuRepositories.TabIndex = 29;
@@ -318,17 +320,38 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(637, 45);
+            this.label6.Location = new System.Drawing.Point(320, 814);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(95, 17);
             this.label6.TabIndex = 44;
-            this.label6.Text = "当前版本 V1.0.0";
+            this.label6.Text = "当前版本 V1.0.1";
+            // 
+            // DaoChuIRepositories
+            // 
+            this.DaoChuIRepositories.Location = new System.Drawing.Point(467, 606);
+            this.DaoChuIRepositories.Name = "DaoChuIRepositories";
+            this.DaoChuIRepositories.Size = new System.Drawing.Size(126, 34);
+            this.DaoChuIRepositories.TabIndex = 45;
+            this.DaoChuIRepositories.Text = "导出IRepositories";
+            this.DaoChuIRepositories.UseVisualStyleBackColor = true;
+            this.DaoChuIRepositories.Click += new System.EventHandler(this.DaoChuIRepositories_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(458, 48);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(416, 17);
+            this.label7.TabIndex = 46;
+            this.label7.Text = "使用流程：输入数据库地址，点击测试连接，选择表，点击需要执行的操作。";
             // 
             // DaoChuTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1032, 850);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.DaoChuIRepositories);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.CheckNone);
@@ -397,5 +420,7 @@
         private Button CheckNone;
         private Label label5;
         private Label label6;
+        private Button DaoChuIRepositories;
+        private Label label7;
     }
 }

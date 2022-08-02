@@ -439,5 +439,46 @@ namespace DaoChu
         {
             LogTiShi("下个版本更新，敬请期待");
         }
+
+        /// <summary>
+        /// 导出IRepositories
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DaoChuIRepositories_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var serviceName = ServiceName.Text;
+                if (!string.IsNullOrEmpty(serviceName))
+                {
+                    GetDBData();
+                    // 获取制定的表
+                    var dbList = GetCheckList();
+                    if (dbList != null && dbList.Count > 0)
+                    {
+                        LogTiShi("开始导出IRepositories");
+                        dbList.ForEach(item =>
+                        {
+                            CreateClassHelper.SaveTableListIRepositories(serviceName, item, GetZhuoMianURL());
+                            LogTiShi(item + "导出IRepositories成功");
+                        });
+                    }
+                    else
+                    {
+                        LogTiShi("请点击测试连接，然后选择要导出的表");
+                    }
+                }
+                else
+                {
+                    LogTiShi("服务名不能为空");
+                }
+            }
+            catch (Exception ex)
+            {
+                LogTiShi("导出IRepositories失败：" + ex);
+                throw;
+            }
+        }
     }
 }
