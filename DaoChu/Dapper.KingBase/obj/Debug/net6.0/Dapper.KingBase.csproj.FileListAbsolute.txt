@@ -1,0 +1,5 @@
+D:\ShenWan\DaoChu\Dapper.KingBase\obj\Debug\net6.0\Dapper.KingBase.csproj.AssemblyReference.cache
+D:\ShenWan\DaoChu\Dapper.KingBase\obj\Debug\net6.0\Dapper.KingBase.GeneratedMSBuildEditorConfig.editorconfig
+D:\ShenWan\DaoChu\Dapper.KingBase\obj\Debug\net6.0\Dapper.KingBase.AssemblyInfoInputs.cache
+D:\ShenWan\DaoChu\Dapper.KingBase\obj\Debug\net6.0\Dapper.KingBase.AssemblyInfo.cs
+D:\ShenWan\DaoChu\Dapper.KingBase\obj\Debug\net6.0\Dapper.KingBase.csproj.CoreCompileInputs.cache

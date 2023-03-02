@@ -1,0 +1,5 @@
+D:\ShenWan\DaoChu\Dapper.NPGSql\obj\Debug\net6.0\Dapper.NPGSql.csproj.AssemblyReference.cache
+D:\ShenWan\DaoChu\Dapper.NPGSql\obj\Debug\net6.0\Dapper.NPGSql.GeneratedMSBuildEditorConfig.editorconfig
+D:\ShenWan\DaoChu\Dapper.NPGSql\obj\Debug\net6.0\Dapper.NPGSql.AssemblyInfoInputs.cache
+D:\ShenWan\DaoChu\Dapper.NPGSql\obj\Debug\net6.0\Dapper.NPGSql.AssemblyInfo.cs
+D:\ShenWan\DaoChu\Dapper.NPGSql\obj\Debug\net6.0\Dapper.NPGSql.csproj.CoreCompileInputs.cache
